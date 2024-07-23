@@ -1,0 +1,23 @@
+# vars.yml
+vm_id: 612
+host_name: container-2
+cores: 2
+cpus: 2
+disk: 50
+memory: 2048
+netif: '{"net0":"name=eth0,ip=172.20.80.24/24,gw=172.20.80.1,bridge=vmbr0"}'
+sudo_user: varun
+sudo_password: mypassword
+sudo_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0GbmNeO1Xl4zrIxIaGkYq946qt8Ur+9dlsSdopFCxqWa32d7oyHRkEEFqmwAMbA4LSO1B9kjuQvgRfIcuEnALpLv70qkUtTlrjkSEsd3KJ/qpqys8aSff51ttvklhlZSfvZlsn6Dm8f5dWa0f4G1C+245PwvD/vSYtOuASjwqADNEnTfup5BdxpiprL8HbUNPACw+sd6sruegI1q81NuTmFZws6b4QgMOzoHvXHiklu2/tkYWpAi3VYemHCgP8SNR9rAwsIHJggm4NK92YPb2x2YxeUQBekfbl767CCD7V4JI56WQi5JqdVrRkVqKFU4C2htRjJAy3BsJYQgUEbCl reddy@LAPT-1-100318
+clamav_cron:
+  minute: "0"
+  hour: "11"
+users:
+      - name: user
+        password: "{{ 'varun' | password_hash('sha512') }}"
+        shell: /bin/bash
+        groups: sudo
+      - name: customer-support
+        password: "{{ 'support' | password_hash('sha512') }}"
+        shell: /bin/bash
+        groups: sudo
