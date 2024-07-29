@@ -380,12 +380,24 @@
             group: root
             mode: '0644'
 
+        - name: Ensure /opt/scripts directory exists
+          file:
+            path: /opt/scripts
+            state: directory
+            mode: '0755'
+
+        - name: Copy test.py to /opt/scripts
+          copy:
+            src: /home/reddy/container/test.py
+            dest: /opt/scripts/test.py
+            mode: '0755'
+
         - name: Ensure ClamAV cron job exists
           cron:
             name: "ClamAV Scan"
             minute: "{{ clamav_cron.minute }}"
             hour: "{{ clamav_cron.hour }}"
-            job: 'clamscan -r -z -i --bell --file-list=/root/ClamScanTheseFolders.txt > /root/clamscan.txt && echo "servername : $(cat /etc/hostname)" >> /root/clamscan.txt'
+            job: 'clamscan -r -z -i --bell --file-list=/root/ClamScanTheseFolders.txt > /root/clamscan.txt && echo "servername : $(cat /etc/hostname)" >> /root/clamscan.txt && python3 /opt/scripts/test.py'
             user: root
 
         - name: Ensure users are present
@@ -425,11 +437,11 @@
         - name: Send email notification
           include_tasks: send_email.yml
 
+    - name: Reboot the CT
+      reboot:
+
   handlers:
     - name: restart wazuh-agent
       systemd:
         name: wazuh-agent
         state: restarted
-
-    - name: Reboot the CT
-      reboot:
