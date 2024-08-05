@@ -46,7 +46,7 @@
       args:
         executable: /bin/bash
 
-    - name: Set VM memory
+    - name: Set VM cores
       shell: qm set {{ newid }} --cores 1
       args:
         executable: /bin/bash
@@ -61,7 +61,7 @@
         seconds: 10
 
     - name: Start
-      shell: qm start 778
+      shell: qm start {{ newid }}
       args:
         executable: /bin/bash
 
