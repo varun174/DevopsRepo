@@ -1,5 +1,5 @@
 [proxmox]
-172.20.80.5 ansible_user=root
+0.0.0.0 ansible_user=root
 
 [ct]
-172.20.80.24 ansible_user=varun ansible_become_pass=mypassword
+0.0.0.0 ansible_user=varun ansible_become_pass=mypassword
