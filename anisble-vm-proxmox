@@ -52,7 +52,7 @@
         executable: /bin/bash
 
     - name: Stop
-      shell: qm stop 778
+      shell: qm stop {{ newid }}
       args:
         executable: /bin/bash
 
