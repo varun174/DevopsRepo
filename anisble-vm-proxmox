@@ -42,12 +42,12 @@
         state: started
 
     - name: Set VM memory
-      shell: qm set 778 --memory 2144
+      shell: qm set {{ newid }} --memory 2144
       args:
         executable: /bin/bash
 
     - name: Set VM memory
-      shell: qm set 778 --cores 1
+      shell: qm set {{ newid }} --cores 1
       args:
         executable: /bin/bash
 
