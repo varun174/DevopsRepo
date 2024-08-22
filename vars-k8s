@@ -1,0 +1,6 @@
+ip_address: x.x.x.x/24
+gateway: x.x.x.x
+control_ip: "x.x.x.x"
+control_name: "control-node"
+worker_ip: "x.x.x.x"
+worker_name: "worker-node"
