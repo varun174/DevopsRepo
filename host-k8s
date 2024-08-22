@@ -1,0 +1,9 @@
+[control]
+x.x.x.x ansible_user=name
+
+[worker]
+x.x.x.x ansible_user=name
+
+[kubernetes:children]
+control
+worker
