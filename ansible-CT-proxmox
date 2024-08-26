@@ -353,7 +353,7 @@
             username: "{{ username }}"
             password: "{{ password }}"
             from: "{{ from }}"
-            to: aniket <aniket.kinekar@neewee.ai>
+            to: aniket <>
             subject: Ansible Report with Attachments
             body: Please find the attached files.
             attach:
