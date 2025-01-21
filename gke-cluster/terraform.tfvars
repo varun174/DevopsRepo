@@ -1,0 +1,8 @@
+project_id = ""
+cluster_name = ""
+region = ""
+network = ""
+subnet = ""
+maintenance_start_time = "2025-01-09T03:00:00Z"
+maintenance_end_time = "2035-01-08T03:00:00Z"
+maintenance_recurrence = "FREQ=WEEKLY;BYDAY=SA"
